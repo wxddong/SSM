@@ -49,7 +49,7 @@ public final class XmlUtil {
 
 	private final static Logger logger = LoggerFactory.getLogger(XmlUtil.class);
 	/**
-	 * 将xml 转化为 map  但是 不包括孙节点
+	 * ?xml ??? map  ?? ??????
 	 * @param xml
 	 * @return
 	 */
@@ -70,11 +70,11 @@ public final class XmlUtil {
 	}
 	
 	/**
-	 * 将xml转化为map 包含孙节点
+	 * ?xml???map ?????
 	 *
 	 * @param xmlDoc
 	 * @return
-	 * @throws JDOMException
+	 * @throws Exception
 	 * @throws IOException
 	 */
 	@SuppressWarnings("unchecked")
@@ -94,8 +94,8 @@ public final class XmlUtil {
 	}
 	
 	 /**
-     * JavaBean转换成xml
-     * 默认编码UTF-8
+     * JavaBean???xml
+     * ????UTF-8
      * @param obj
      * @return
      */
@@ -104,7 +104,7 @@ public final class XmlUtil {
     }
 
     /**
-     * JavaBean转换成xml
+     * JavaBean???xml
      * @param obj
      * @param encoding
      * @return
@@ -129,7 +129,7 @@ public final class XmlUtil {
     }
 
     /**
-     * xml转换成JavaBean
+     * xml???JavaBean
      * @param xml
      * @param c
      * @return
@@ -148,31 +148,31 @@ public final class XmlUtil {
     }
 
 	/***
-	 * ���ķ����������еݹ����
+	 * ????????????????????
 	 *
 	 * @param outele
 	 * @param outmap
 	 */
 	public static Map element2map(Element outele, Map outmap) {
-		List<Element> list = outele.elements();//�ض�����0,1,2,3,....... �����쳣
+		List<Element> list = outele.elements();//???????0,1,2,3,....... ??????
 		int size = list.size();
-		if (size == 0) {//��ǰ�ڵ���Ҷ�ӽڵ�(outele���ΪҶ�ӽڵ�,�ǲ��������ӽڵ��,��Ϊ�������Ǵ��ı�)
+		if (size == 0) {//?????????????(outele?????????,??????????????,???????????????)
 			outmap.put(outele.getName(), outele.getTextTrim());
 		} else {
 			Map<String, Object> innermap = new HashMap<String, Object>();
 			for (Element ele1 : list) {
 				String eleName = ele1.getName();
-				Object obj = innermap.get(eleName);//��ȡMASTER
-				if (obj == null) {//�����MASTER������,������һ��MASTER����
+				Object obj = innermap.get(eleName);//???MASTER
+				if (obj == null) {//?????MASTER??????,?????????MASTER????
 					element2map(ele1, innermap);
 				} else {
-					if (obj instanceof Map) {//���û�����ɹ�list,��ԭ���ĵ���map�ϲ����µ�list
+					if (obj instanceof Map) {//???????????list,??????????map????????list
 						List<Map> list1 = new ArrayList<Map>();
 						list1.add((Map) innermap.remove(eleName));
 						element2map(ele1, innermap);
 						list1.add((Map) innermap.remove(eleName));
 						innermap.put(eleName, list1);
-					} else {//�������map,��Ȼ��list,ֻ�����������,���Բ���else if �����ж�
+					} else {//???????map,?????list,????????????,???????else if ???????
 						element2map(ele1, innermap);
 						((List) obj).add(innermap);
 					}
@@ -321,7 +321,7 @@ public final class XmlUtil {
 
 	public static void main(String[] args){ 
 		try{
-			String xmlStr = "<person><students><student><name>����</name><age>12</age></student></students><techer></techer></person>";
+			String xmlStr = "<person><students><student><name>????</name><age>12</age></student></students><techer></techer></person>";
 			Map<String, Object> xmlStrToMap = XmlUtil.xmlStrToMap(xmlStr);
 			System.out.println(xmlStrToMap);
 		}catch (Exception e){
