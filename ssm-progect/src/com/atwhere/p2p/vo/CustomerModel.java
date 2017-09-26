@@ -1,19 +1,5 @@
 package com.atwhere.p2p.vo;
 
-import com.atwhere.p2p.util.Page;
-
-/**
-
-CREATE TABLE `tbl_customer` (
-  `uuid` int(11) NOT NULL AUTO_INCREMENT,
-  `customerId` varchar(20) DEFAULT NULL,
-  `pwd` varchar(20) DEFAULT NULL,
-  `showName` varchar(100) DEFAULT NULL,
-  `trueName` varchar(100) DEFAULT NULL,
-  `registerTime` varchar(100) DEFAULT NULL,
-  PRIMARY KEY (`uuid`)
-)
- */
 public class CustomerModel extends BaseModel
 {	
 
