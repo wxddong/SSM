@@ -1,3 +1,10 @@
+CREATE TABLE `student` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(20) DEFAULT NULL,
+  `birthday` datetime default now(),
+  PRIMARY KEY (`id`)
+)
+
 CREATE TABLE `tbl_customer` (
   `uuid` int(11) NOT NULL AUTO_INCREMENT,
   `customerId` varchar(20) DEFAULT NULL,
@@ -8,10 +15,5 @@ CREATE TABLE `tbl_customer` (
   PRIMARY KEY (`uuid`)
 )
 
-CREATE TABLE `student` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(20) DEFAULT NULL,
-  `birthday` datetime default now(),
-  PRIMARY KEY (`id`)
-)
+
 
