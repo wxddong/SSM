@@ -54,7 +54,7 @@
      <!-- 在实际项目中，我们很少会自己手动去获取消息，如果需要手动去获取消息，那就没有必要使用到ActiveMq了，可以用一个Redis 就足够了。
           不能手动去获取消息，那么我们就可以选择使用一个监听器来监听是否有消息到达，这样子可以很快的完成对消息的处理。 -->
     <!-- 配置消息队列监听者（Queue） -->
-    <bean id="queueMessageListener" class="com.atwhere.activemq.filter.QueueMessageListener"/>
+    <bean id="queueMessageListener" class="com.atwhere.activemq.listener.QueueMessageListener"/>
 
     <!-- 显示注入消息监听容器（Queue），配置连接工厂，监听的目标是demoQueueDestination，监听器是上面定义的监听器 -->
     <bean id="queueListenerContainer"

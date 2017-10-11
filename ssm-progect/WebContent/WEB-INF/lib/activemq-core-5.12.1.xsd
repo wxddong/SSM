@@ -3201,7 +3201,7 @@ Sets the destination file name to create the destination diagram
         </xs:complexType>
     </xs:element>
     <!--
- element for type: org.apache.activemq.filter.DefaultDestinationMapEntry
+ element for type: org.apache.activemq.listener.DefaultDestinationMapEntry
 -->
     <xs:element name="destinationEntry">
         <xs:annotation>

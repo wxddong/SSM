@@ -1,4 +1,4 @@
-package com.atwhere.activemq.filter;
+package com.atwhere.activemq.listener;
 
 import javax.jms.JMSException;
 import javax.jms.Message;
