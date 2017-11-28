@@ -166,7 +166,7 @@ public class PagePlugin implements Interceptor
 			if("mysql".equals(dialect)){
 				pageSql.append(sql);
 				pageSql.append(" limit "+page.getStart()+","+page.getPageShow());
-				System.out.println("mysql split page resutl SQL:   "+pageSql.toString());
+//				System.out.println("mysql split page resutl SQL:   "+pageSql.toString());
 			}else if("oracle".equals(dialect)){
 				pageSql.append("select * from (select tmp_tb.*,ROWNUM row_id from (");
 				pageSql.append(sql);

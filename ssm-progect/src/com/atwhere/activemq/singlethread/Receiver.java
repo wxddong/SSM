@@ -22,7 +22,7 @@ public class Receiver {
 		Destination destination;
 		// 消费者，消息接收者
 		MessageConsumer consumer;
-		connectionFactory = new ActiveMQConnectionFactory(ActiveMQConnection.DEFAULT_USER, ActiveMQConnection.DEFAULT_PASSWORD, "tcp://192.168.0.104:61616");
+		connectionFactory = new ActiveMQConnectionFactory(ActiveMQConnection.DEFAULT_USER, ActiveMQConnection.DEFAULT_PASSWORD, "tcp://192.168.0.110:61616");
 		try {
 			// 构造从工厂得到连接对象
 			connection = connectionFactory.createConnection();
