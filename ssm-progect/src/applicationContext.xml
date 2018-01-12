@@ -34,14 +34,14 @@
 	  <jaxrs:serviceBeans>
 	  	   <ref bean="myRestfulService" />
 	  </jaxrs:serviceBeans>
-	  
+
 	  <jaxrs:extensionMappings>
 		  <entry key="json" value="application/json" />
 		  <entry key="xml" value="application/xml" />
 	  </jaxrs:extensionMappings>
-	  
+
 	  <jaxrs:languageMappings>
-	      <entry key="en" value="en-gb"/>  
+	      <entry key="en" value="en-gb"/>
 	  </jaxrs:languageMappings>
 </jaxrs:server>
 
@@ -57,28 +57,28 @@
 	<task:annotation-driven mode="proxy"/>
 
 	<tx:annotation-driven transaction-manager="transactionManager"	proxy-target-class="true" />
-	
+
 	<bean id="transactionManager"	class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
-	
+
 	<bean name="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
 		<property name="url" value="jdbc:mysql://192.168.31.215:3306/ssm?useUnicode=true&amp;characterEncoding=utf8"/>
 		<property name="username" value="root" />
 		<property name="password" value="000000" />
 	</bean>
-	
+
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<property name="configLocation" value="classpath:MybatisConf.xml"/>
 		<property name="mapperLocations" value="classpath:com/atwhere/p2p/**/*Mapper.xml" />
 	</bean>
-	
+
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="basePackage" value="com.atwhere.p2p"/>
 		<property name="annotationClass" value="org.springframework.stereotype.Repository"/>
 	</bean>
-	
-	
+
+
  </beans>
